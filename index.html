@@ -26,6 +26,8 @@
   <link rel="stylesheet" type="text/css" href="themes/yellow-swan/css/main.css">
   <!-- / STYLES -->
 
+  <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
@@ -79,7 +81,11 @@
 	</h1>
 	<h2 class="tagline">05 de Dezembro, Auditório da Estácio, Nova Friburgo</h2>
 
-    
+	<!--h3>
+		<div id="clock"></div>
+	</h3-->
+
+	
       <div class="call-action-area">
         
 		<span class="price">Vagas limitadas!</span>
@@ -90,6 +96,11 @@
         
       </div>
     
+
+	<h3>
+		Faltam <span id="clock"></span>
+	</h3>
+
   </div>
 </header>
 <!--  / HEADER -->
@@ -235,6 +246,21 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="themes/yellow-swan/js/jquery.js"><\/script>')</script>
+
+  <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.1.0/dist/jquery.countdown.min.js"></script>
+
+  <script>
+	$(document).ready(function(){
+		$('#clock').countdown('2015/12/05', function(event){
+			var $this = $(this).html(event.strftime(''
+						+ '<span>%D</span> dias '
+						+ '<span>%H</span>h '
+						+ '<span>%M</span>min '
+						+ '<span>%S</span>s'));
+		});
+	});
+  </script>
+
 
   
   <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
